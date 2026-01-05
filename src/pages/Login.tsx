@@ -1,11 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+type LoginProps = {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Login = ({ setIsLoggedIn }: LoginProps) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
     localStorage.setItem("isLoggedIn", "true");
-    navigate("/dashboard");
+    setIsLoggedIn(true);
+    navigate("/");
   };
 
   return (
@@ -21,3 +26,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

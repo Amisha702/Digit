@@ -1,26 +1,113 @@
-function Register() {
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Register.css";
+
+const Register = () => {
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+    terms: false,
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setForm({
+      ...form,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.password !== form.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    if (!form.terms) {
+      alert("Please agree to Terms & Conditions");
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(form));
+    alert("Registration successful");
+    navigate("/login");
+  };
+
   return (
-    <div style={{ padding: "40px", maxWidth: "400px" }}>
-      <h1>Create Account</h1>
+    <div className="register-container">
+      <h2>Register</h2>
 
-      <label>Username</label>
-      <input type="text" placeholder="Username" />
+      <form onSubmit={handleRegister} className="register-form">
+        <input
+          name="name"
+          placeholder="Full Name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
 
-      <br /><br />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
 
-      <label>Email</label>
-      <input type="email" placeholder="Email" />
+        <input
+          name="phone"
+          placeholder="Phone Number"
+          value={form.phone}
+          onChange={handleChange}
+          required
+        />
 
-      <br /><br />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
+          required
+        />
 
-      <label>Password</label>
-      <input type="password" placeholder="Password" />
+        <input
+          name="confirmPassword"
+          type="password"
+          placeholder="Confirm Password"
+          value={form.confirmPassword}
+          onChange={handleChange}
+          required
+        />
 
-      <br /><br />
+        {/* ✅ TERMS CHECKBOX */}
+        <div className="terms-container">
+          <input
+            id="terms"
+            type="checkbox"
+            name="terms"
+            checked={form.terms}
+            onChange={handleChange}
+          />
+          <label htmlFor="terms">I agree to Terms & Conditions</label>
+        </div>
 
-      <button>Sign Up</button>
+        <button type="submit" disabled={!form.terms}>
+          Register
+        </button>
+      </form>
     </div>
   );
-}
+};
 
 export default Register;
+
+

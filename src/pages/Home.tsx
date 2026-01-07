@@ -1,23 +1,55 @@
 const Home = () => {
   return (
-    <div className='group'>
-      <div className='overflow-hidden h-52 relative'>
+    <div className="home">
+      {/* Hero Section */}
+      <div className="hero">
+        <div>
+          <h1>Shop Smarter 🛍️</h1>
+          <p>Best products. Best prices. Fast delivery.</p>
+          <button>Shop Now</button>
+        </div>
         <img
-          src={"image"}
-          alt={"destination"}
-          className='absolute size-full object-cover group-hover:scale-105 transition-transform duration-500'
+          src="https://images.unsplash.com/photo-1606813902914-3d7dbdfb36f9"
+          alt="shopping"
         />
       </div>
-      <div className='w-[90%] mx-auto bg-background rounded-md -translate-y-[42%] overflow-hidden shadow-md'>
-        <div className='clip w-fit bg-primary min-w-4/5 p-3 text-primary-foreground font-semibold group-hover:bg-gray-800 transition-colors duration-500'>
-          {"destination"}
+
+    <h2 className="section-title">Categories</h2>
+
+      <div className="categories">
+      <div className="category">📱 Electronics</div>
+      <div className="category">👕 Fashion</div>
+      <div className="category">🎧 Accessories</div>
+         </div>
+
+
+      {/* Featured Products */}
+      <h2 className="section-title">Featured Products</h2>
+
+      <div className="product-grid">
+        <div className="product-card">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" />
+          <h4>Smart Watch</h4>
+          <p>$120</p>
+          <button>Add to Cart</button>
+          <p>⭐⭐⭐⭐☆</p>
+          <button className="cart-btn">Add to Cart</button>
+
         </div>
-        {/* <Link to='/' className='px-2 py-4 flex items-center justify-between'>
-          View All Tours
-          <div className='p-2 rounded-full grid place-content-center bg-gray-100 group-hover:bg-primary/60 group-hover:text-primary-foreground transition-colors duration-300'>
-            <ArrowRight size={18} />
-          </div>
-        </Link> */}
+
+        <div className="product-card">
+          <img src="https://images.unsplash.com/photo-1512499617640-c2f999098c01" />
+          <h4>Headphones</h4>
+          <p>$80</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div className="product-card">
+          <img src="https://images.unsplash.com/photo-1585386959984-a41552262b64" />
+          <h4>Camera</h4>
+          <p>$560</p>
+          <button>Add to Cart</button>
+        </div>
       </div>
     </div>
   );

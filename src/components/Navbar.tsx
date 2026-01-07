@@ -1,28 +1,26 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
-  const isAuthenticated = localStorage.getItem("auth") === "true";
+const Navbar = () => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
 
   return (
-    <nav style={{ padding: 10 }}>
-      <Link to="/">Home</Link>{" | "}
+    <div className="navbar">
+      <h2>MyApp</h2>
+      <div className="nav-links">
+        <Link to="/">Home</Link>
 
-      {!isAuthenticated && (
-        <>
-          <Link to="/login">Login</Link>{" | "}
-          <Link to="/register">Register</Link>{" | "}
-        </>
-      )}
+        {!isLoggedIn && (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </>
+        )}
 
-      {isAuthenticated && (
-        <>
-          <Link to="/dashboard">Dashboard</Link>{" | "}
-          <Link to="/remove-account">Remove Account</Link>{" | "}
-          <Link to="/logout">Logout</Link>
-        </>
-      )}
-    </nav>
+        {isLoggedIn && <Link to="/logout">Logout 🔓</Link>}
+      </div>
+    </div>
   );
-}
+};
 
 export default Navbar;
+

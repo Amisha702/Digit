@@ -6,17 +6,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const getCookie = (name: string) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop()?.split(";").shift();
-  };
-
   const handleLogin = () => {
-    const savedEmail = getCookie("userEmail");
-    const savedPassword = getCookie("userPassword");
+    const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
 
-    if (email === savedEmail && password === savedPassword) {
+    if (
+      email.trim().toLowerCase() === storedUser.email &&
+      password.trim() === storedUser.password
+    ) {
       localStorage.setItem("isLoggedIn", "true");
       navigate("/dashboard");
     } else {
@@ -31,12 +27,14 @@ const Login = () => {
       <input
         type="email"
         placeholder="Email"
+        value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
       <input
         type="password"
         placeholder="Password"
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
@@ -46,3 +44,4 @@ const Login = () => {
 };
 
 export default Login;
+

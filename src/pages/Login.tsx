@@ -1,27 +1,39 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { clearAllCookies } from "../utils/clearCookies";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    if (
-      email.trim().toLowerCase() === storedUser.email &&
-      password.trim() === storedUser.password
-    ) {
-      localStorage.setItem("isLoggedIn", "true");
-      navigate("/dashboard");
-    } else {
-      alert("Invalid credentials");
+  const handleLogin = () => {
+    const storedUser = localStorage.getItem("user");
+
+    if (!storedUser) {
+      alert("No user found. Please register first.");
+      return;
     }
+
+    const parsedUser = JSON.parse(storedUser);
+
+    if (email !== parsedUser.email || password !== parsedUser.password) {
+      alert("Invalid credentials");
+      return;
+    }
+
+    clearAllCookies();
+
+    localStorage.setItem("auth", "true");
+
+    alert("Login successful!");
+
+    navigate("/");
   };
 
   return (
-    <div>
+    <div style={{ padding: "40px" }}>
       <h2>Login</h2>
 
       <input
@@ -31,6 +43,9 @@ const Login = () => {
         onChange={(e) => setEmail(e.target.value)}
       />
 
+      <br />
+      <br />
+
       <input
         type="password"
         placeholder="Password"
@@ -38,10 +53,15 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
+      <br />
+      <br />
+
       <button onClick={handleLogin}>Login</button>
     </div>
   );
 };
 
 export default Login;
+
+
 

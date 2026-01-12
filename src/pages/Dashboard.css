@@ -1,0 +1,70 @@
+/* Default Theme */
+.dashboard {
+  background: #f5f6ff;
+  padding: 40px;
+  min-height: 100vh;
+  transition: all 0.4s ease;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.theme-btn {
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: #6c7cff;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+  background: #e53935;
+  box-shadow: 0 0 20px rgba(229, 57, 53, 0.6);
+}
+
+/* Card */
+.card {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔴 SMART THEME */
+.smart-theme {
+  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+}
+
+.smart-theme .title {
+  color: #b71c1c;
+}
+
+.smart-theme .subtitle {
+  color: #7f0000;
+}
+
+.smart-theme .card {
+  background: #ffebee;
+  border-left: 6px solid #e53935;
+}
+
+.dashboard {
+  background: #f5f6ff;
+  transition: all 0.4s ease;
+}
+
+.dashboard.active {
+  background: #ffebee;
+}

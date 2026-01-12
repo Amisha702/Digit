@@ -1,11 +1,14 @@
-const Dashboard = () => {
+import { useTheme } from "../theme/theme";
+
+const ThemeToggle = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div style={{ padding: "40px" }}>
-      <h2>Dashboard</h2>
-      <p>Welcome! You are logged in.</p>
-    </div>
+    <button className="theme-btn" onClick={toggleTheme}>
+      {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+    </button>
   );
 };
 
-export default Dashboard;
+export default ThemeToggle;
 

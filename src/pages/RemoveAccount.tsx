@@ -4,7 +4,7 @@ function RemoveAccount() {
   const navigate = useNavigate();
 
   const handleRemove = () => {
-    localStorage.clear(); // remove all stored data
+    localStorage.clear(); 
     alert("Account removed successfully");
     navigate("/register");
   };

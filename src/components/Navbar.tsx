@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../theme/Theme";
 
 const Navbar = () => {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="navbar">
-      <h2>MyApp</h2>
-      <div className="nav-links">
+    <nav className="navbar">
+      <h2>Shop Smarter</h2>
+
+      <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
         <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
 
-        {!isLoggedIn && (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
-
-        {isLoggedIn && <Link to="/logout">Logout 🔓</Link>}
+        <button className="theme-btn" onClick={toggleTheme}>
+          {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+        </button>
       </div>
-    </div>
+    </nav>
   );
 };
 
 export default Navbar;
+
 

@@ -1,85 +1,94 @@
-/* LIGHT THEME */
-body.light {
-  background-color: #ffffff;
-  color: #222;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-/* DARK THEME */
-body.dark {
-  background-color: #121212;
-  color: #f1f1f1;
+.product-card {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s;
 }
 
-/* Dashboard cards */
-.card {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 12px;
+.product-card:hover {
+  transform: translateY(-8px);
 }
 
-body.dark .card {
-  background: #1e1e1e;
+.image-wrapper {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Buttons */
-.theme-btn {
-  padding: 8px 16px;
-  border-radius: 20px;
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.price {
+  color: #00ff99;
+  font-size: 18px;
+}
+
+.buy-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff6a00;
   border: none;
-  cursor: pointer;
-  background: #6c7cff;
   color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* LIGHT MODE */
+body {
+  background-color: #0f0f0f;
+  color: white;
+  transition: 0.3s;
+}
+
 body.light {
-  background-color: #ffffff;
-  color: #222;
+  background-color: #f4f4f4;
+  color: black;
 }
 
-/* DARK MODE */
-body.dark {
-  background-color: #121212;
-  color: #f1f1f1;
-}
-
-/* Navbar */
+/* navbar */
 .navbar {
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
-  padding: 16px 30px;
-  background: #f5f5f5;
+  align-items: center;
 }
 
-body.dark .navbar {
-  background: #1e1e1e;
-}
-
-/* Buttons */
 .theme-btn {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: none;
+  padding: 6px 12px;
   cursor: pointer;
-  background: #6c7cff;
+}
+
+/* cards */
+.product-card {
+  background: #1c1c1c;
+}
+
+body.light .product-card {
+  background: white;
+}
+
+body {
+  margin: 0;
+  background-color: #0f0f0f;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
-.card {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 14px;
-  width: 220px;
-  text-align: center;
-}
-
-.product-img {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-body.dark .card {
-  background: #1e1e1e;
+body.light {
+  background-color: #f5f5f5;
+  color: black;
 }

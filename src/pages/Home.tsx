@@ -1,24 +1,19 @@
 import ProductCard from "../components/ProductCard";
-import { Productdetails } from "../data/product_data";
+import { products } from "../data/product_data";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <h2>Featured Products</h2>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "20px",
-          flexWrap: "wrap",
-        }}
-      >
-        {Productdetails.map(product => (
+      <div className="product-grid">
+        {products.map((item) => (
           <ProductCard
-            key={product.id}
-            name={product.name}
-            price={product.price}
-            image={product.image}
+            key={item.id}
+            name={item.name}
+            price={item.price}
+            rating={item.rating}
+            image={item.image}
           />
         ))}
       </div>
@@ -27,6 +22,8 @@ const Home = () => {
 };
 
 export default Home;
+
+
 
 
 

@@ -1,26 +1,29 @@
-type ProductProps = {
-  id: number;
-  title: string;
+type Props = {
+  name: string;
   price: number;
+  rating: number;
   image: string;
 };
 
-const ProductCard = ({ id, title, price, image }: ProductProps) => {
-  const handleClick = () => {
-    console.log("Clicked product id:", id);
-  };
-
+const ProductCard = ({ name, price, rating, image }: Props) => {
   return (
-    <div className="product-card" onClick={handleClick}>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>${price}</p>
-      <button>Buy Now</button>
+    <div className="product-card">
+      <div className="image-wrapper">
+        <img src={image} alt={name} />
+      </div>
+
+      <h3>{name}</h3>
+      <p className="price">${price}</p>
+      <p className="rating">⭐ {rating}</p>
+
+      <button className="buy-btn">Buy Now</button>
     </div>
   );
 };
 
 export default ProductCard;
+
+
 
 
 

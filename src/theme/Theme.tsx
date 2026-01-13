@@ -1,27 +1,23 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
-
-interface ThemeContextType {
-  theme: Theme;
+type ThemeContextType = {
+  theme: "light" | "dark";
   toggleTheme: () => void;
-}
+};
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    return (localStorage.getItem("theme") as Theme) || "light";
-  });
-
-  useEffect(() => {
-    document.body.className = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
+
+  // 🔥 THIS IS WHAT ACTUALLY CHANGES UI
+  useEffect(() => {
+    document.body.classList.toggle("light", theme === "light");
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -37,4 +33,3 @@ export const useTheme = () => {
   }
   return context;
 };
-

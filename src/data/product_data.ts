@@ -1,32 +1,29 @@
-import headphone from "../assets/images/headphone.jpeg"
-import watch from "../assets/images/mobile.jpeg"
-import mobile from "../assets/images/watch.jpeg"
+import mobile from "../assets/images/mobile.jpeg";
+import headphone from "../assets/images/headphone.jpeg";
+import watch from "../assets/images/watch.jpeg";
 
-export const Productdetails = [
-    {
-        id:1,
-        image:watch,
-        name:"smart phone",
-        price:9856 ,
-        rating:"9.9"
-
-    },
-    {
-        id:"2",
-        image:headphone,
-        name:"headphone",
-        price:678,
-        rating:6.7
-
-    },
-    {
-        id:3,
-        image:mobile,
-        name:"speaker",
-        price:"1000",
-        rating:8.9
-    }
-
-]
+export const products = [
+  {
+    id: 1,
+    name: "Smart Phone",
+    price: 9856,
+    rating: 9.9,
+    image: mobile,
+  },
+  {
+    id: 2,
+    name: "Headphone",
+    price: 50,
+    rating: 6.7,
+    image: headphone,
+  },
+  {
+    id: 3,
+    name: "Smart Watch",
+    price: 1000,
+    rating: 4.5,
+    image: watch,
+  },
+];
 
 

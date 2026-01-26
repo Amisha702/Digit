@@ -1,11 +1,7 @@
-type Props = {
-  name: string;
-  price: number;
-  rating: number;
-  image: string;
-};
 
-const ProductCard = ({ name, price, rating, image }: Props) => {
+import type { CardProps } from "../type/cardType";
+
+const ProductCard = ({ name, price, rating, image }: CardProps) => {
   return (
     <div className="product-card">
       <div className="image-wrapper">

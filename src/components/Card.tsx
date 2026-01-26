@@ -1,12 +1,8 @@
-type CardProps = {
-  title: string;
-  description: string;
-  image: string;
-  price?: number;
-  onClick?: () => void;
-};
+import type { CardProps } from "../type/cardType";
 
-const Card = ({ title, description, image, price, onClick }: CardProps) => {
+
+
+const Card = ({ name, description, rating, image, price, onClick }:CardProps) => {
   return (
     <div
       onClick={onClick}
@@ -21,10 +17,10 @@ const Card = ({ title, description, image, price, onClick }: CardProps) => {
     >
       <img
         src={image}
-        alt={title}
+        alt={name}
         style={{ width: "100%", borderRadius: "8px" }}
       />
-      <h3>{title}</h3>
+      <h3>{name}</h3>
       <p>{description}</p>
       {price && <strong>Rs. {price}</strong>}
     </div>

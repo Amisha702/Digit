@@ -9,6 +9,7 @@ export const products = [
     price: 9856,
     rating: 9.9,
     image: mobile,
+    description: "dsfg"
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const products = [
     price: 50,
     rating: 6.7,
     image: headphone,
+    description: "dsfg"
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ export const products = [
     price: 1000,
     rating: 4.5,
     image: watch,
+    description: "dsfg"
   },
 ];
 

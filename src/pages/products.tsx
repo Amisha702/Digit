@@ -1,20 +1,22 @@
-import ProductCard from "../components/ProductCard";
-import products from "../data/product_data";
 
-const Home = () => {
+import Card from "../components/Card";
+import {products} from "../data/product_data";
+
+const Products = () => {
   return (
     <div className="products">
       {products.map((item) => (
-        <ProductCard
+        <Card
           key={item.id}
-          id={item.id}
-          title={item.title}
-          price={item.price}
-          image={item.image}
+            name={item.name}
+            price={item.price}
+            rating={item.rating}
+            image={item.image}
+            description={item.description|| "des"}
         />
       ))}
     </div>
   );
 };
 
-export default Home;
+export default Products;

@@ -3,6 +3,6 @@ export type CardProps = {
   description: string;
   image: string;
   price?: number;
-  rating:number;
+  rating: number;
   onClick?: () => void;
 };

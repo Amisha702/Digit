@@ -1,7 +1,15 @@
 
 import type { CardProps } from "../type/cardType";
 
-const ProductCard = ({ name, price, rating, image }: CardProps) => {
+const data = {
+  name: "Sample Product",
+  price: 29.99,
+  rating: 4.5,
+  image: "https://via.placeholder.com/150",
+}
+
+export const ProductCard = (data: CardProps) => {
+  const { name, price, rating, image } = data;
   return (
     <div className="product-card">
       <div className="image-wrapper">
@@ -17,8 +25,6 @@ const ProductCard = ({ name, price, rating, image }: CardProps) => {
   );
 };
 
-export default ProductCard;
-0
 
 
 

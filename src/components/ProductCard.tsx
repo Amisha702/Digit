@@ -22,7 +22,7 @@ const ProductCard = ({ name, price, rating, image }: Props) => {
 };
 
 export default ProductCard;
-
+0
 
 
 

@@ -2,7 +2,7 @@ import type { CardProps } from "../type/cardType";
 
 
 
-const Card = ({ name, description, rating, image, price, onClick }:CardProps) => {
+const Card = ({ name, description, rating, image, price, onClick }: CardProps) => {
   return (
     <div
       onClick={onClick}

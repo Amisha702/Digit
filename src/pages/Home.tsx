@@ -1,4 +1,4 @@
-import ProductCard from "../components/ProductCard";
+import { ProductCard } from "../components/ProductCard";
 import { products } from "../data/product_data";
 
 const Home = () => {
@@ -14,6 +14,7 @@ const Home = () => {
             price={item.price}
             rating={item.rating}
             image={item.image}
+            description={item.description}
           />
         ))}
       </div>

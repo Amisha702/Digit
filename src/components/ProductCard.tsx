@@ -1,4 +1,3 @@
-
 import type { CardProps } from "../type/cardType";
 
 const data = {

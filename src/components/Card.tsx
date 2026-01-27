@@ -21,6 +21,7 @@ const Card = ({ name, description, rating, image, price, onClick }:CardProps) =>
         style={{ width: "100%", borderRadius: "8px" }}
       />
       <h3>{name}</h3>
+      <p className="rating">⭐ {rating}</p>
       <p>{description}</p>
       {price && <strong>Rs. {price}</strong>}
     </div>
@@ -28,3 +29,4 @@ const Card = ({ name, description, rating, image, price, onClick }:CardProps) =>
 };
 
 export default Card;
+

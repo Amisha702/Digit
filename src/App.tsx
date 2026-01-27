@@ -1,24 +1,18 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import { Routes, Route, Navigate } from "react-router-dom";
+import GridPage from "./pages/Gridpage";
 
-const App = () => {
+function App() {
   return (
-    <>
-      <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Navigate to="/grid" />} />
+      <Route path="/grid" element={<GridPage />} />
+    </Routes>
   );
-};
+}
 
 export default App;
+
+
 
 
 

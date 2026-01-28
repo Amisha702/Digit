@@ -1,17 +1,16 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import GridPage from "./pages/Gridpage";
+
+import SocialLinks from "./components/SocialLinks/SocialLinks";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/grid" />} />
-      <Route path="/grid" element={<GridPage />} />
-    </Routes>
+    <>
+      <h1>My App</h1>
+      <SocialLinks />
+    </>
   );
 }
 
 export default App;
-
 
 
 

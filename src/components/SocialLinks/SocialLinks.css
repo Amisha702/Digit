@@ -1,0 +1,15 @@
+
+.social-container {
+  display: flex;
+  gap: 16px;
+}
+
+.social-container a {
+  font-size: 24px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.social-container a:hover {
+  color: #0077b5;
+}
